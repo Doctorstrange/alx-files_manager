@@ -13,7 +13,6 @@ const routing = (app) => {
   router.get('/stats', (req, res) => {
     AppController.getStats(req, res);
   });
-
 };
 
-export default routing
+export default routing;
