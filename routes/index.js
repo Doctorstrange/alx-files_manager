@@ -15,7 +15,6 @@ const routing = (app) => {
   router.get('/stats', (req, res) => {
     AppController.getStats(req, res);
   });
-  };
 
   router.post('/users', (req, res) => {
   UsersController.postNew(req, res);
@@ -32,5 +31,6 @@ const routing = (app) => {
   router.get('/users/me', (req, res) => {
     UsersController.getMe(req, res);
   });
+};
 
 export default routing;
