@@ -13,6 +13,10 @@ const routing = (app) => {
   router.get('/stats', (req, res) => {
     AppController.getStats(req, res);
   });
-};
+  };
+
+  router.post('/users', (req, res) => {
+  UsersController.postNew(req, res);
+  });
 
 export default routing;
