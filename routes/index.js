@@ -5,7 +5,7 @@ import AuthController from '../controllers/AuthController.js';
 
 const router = express.Router();
 
-const routing = (app) => {
+const routeController = (app) => {
   app.use('/', router);
 
   router.get('/status', (req, res) => {
@@ -33,4 +33,4 @@ const routing = (app) => {
   });
 };
 
-export default routing;
+export default routeController;
