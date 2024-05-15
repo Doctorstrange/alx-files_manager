@@ -15,6 +15,7 @@ class AuthController {
       const pass = sha1(auth[1]);
 
       const user = await dbClient.getUser({ email });
+      // console.log('USER IN AUTH GETCONNECT()', user);
 
       if (!user) {
         response.status(401).json({ error: 'Unauthorized' });
@@ -39,7 +40,9 @@ class AuthController {
   static async getDisconnect (request, response) {
     try {
       const userToken = request.header('X-Token');
+      // console.log('USER TOKEN DISCONNECT', userToken);
       const userKey = await redisClient.get(`auth_${userToken}`);
+      // console.log('USER KEY DISCONNECT', userKey);
       if (!userKey) {
         response.status(401).json({ error: 'Unauthorized' });
       }
